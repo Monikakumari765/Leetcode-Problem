@@ -1,8 +1,8 @@
 # Write your MySQL query statement below
-select v.customer_id, count(v.visit_id) 
+select a.customer_id, count(a.visit_id) 
 as count_no_trans
-from Visits v
+from Visits a
 left join  Transactions t
-on v.visit_id = t.visit_id
+on a.visit_id = t.visit_id
 where t.transaction_id is null
-group by  v.customer_id;
+group by  a.customer_id;
